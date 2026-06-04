@@ -1,0 +1,17 @@
+# === Ignore Everything inside the Data Directory ===
+data/
+**/data/
+
+# === Ignore Environments ===
+.venv/
+.venv_314/
+.env
+
+# === Ignore Pycache (Inside and Outside Root Directory) ===
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# === Ignore VS Code Configuration ===
+.vscode/
