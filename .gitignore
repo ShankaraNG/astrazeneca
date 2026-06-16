@@ -1,6 +1,10 @@
 # === Ignore Everything inside the Data Directory ===
 data/
 **/data/
+cleaned_data/
+**/cleaned_data/
+files/
+**/files/
 
 # === Ignore Environments ===
 .venv/
