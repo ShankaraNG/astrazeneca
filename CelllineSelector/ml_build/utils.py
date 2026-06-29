@@ -7,7 +7,7 @@ base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def data_reader(subfolder, filename):
     try:
-        data_sub_path = os.path.join(base_path,"data", "raw", subfolder)
+        data_sub_path = os.path.join(base_path, "data", "raw", subfolder)
         if not os.path.isdir(data_sub_path):
             raise Exception("Data path doesnt exists")
         if filename == "1_4_hpa_rna_celline":
@@ -94,6 +94,12 @@ def data_reader(subfolder, filename):
                 raise Exception("Data file 14_OmicsGlobalSignatures.csv doesnt exists")
             OmicsGlobalSignatures_df = pd.read_csv(filepath)
             return OmicsGlobalSignatures_df
+        elif filename == "mart_export":
+            filepath = os.path.join(data_sub_path,"mart_export.txt")
+            if not os.path.isfile(filepath):
+                raise Exception("Data File mart_export.txt doesnt exists")
+            mart_export_df = pd.read_csv(filepath, sep='\t')
+            return mart_export_df
         else:
             raise Exception("Invalid Input given to the file name")
     except Exception as e:
@@ -102,7 +108,7 @@ def data_reader(subfolder, filename):
     
 def data_save(data_df, sudirectory, subfolder, filename):
     try:
-        data_sub_path = os.path.join(base_path,"data", sudirectory, subfolder)
+        data_sub_path = os.path.join(base_path, "data", sudirectory, subfolder)
         if not os.path.isdir(data_sub_path):
             os.makedirs(data_sub_path, exist_ok=True)
         filepath = os.path.join(data_sub_path, filename)

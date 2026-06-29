@@ -82,6 +82,9 @@
                         <mxPoint x="690" y="710" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="284" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="26" target="277">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="26" value="Filter the dataset for ESNG ID and Protein id for exclusion criteria" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="500" y="780" width="140" height="60" as="geometry"/>
                 </mxCell>
@@ -100,23 +103,17 @@
                         <mxPoint x="460" y="710" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="37" value="" style="edgeStyle=none;html=1;" parent="1" source="30" target="34" edge="1">
+                <mxCell id="294" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30" target="292">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="Combine exclusion criteria dataframe with that of target dataframe" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="910" width="140" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="33" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="26" target="30" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="480" y="860" as="sourcePoint"/>
-                        <mxPoint x="530" y="810" as="targetPoint"/>
-                    </mxGeometry>
+                    <mxGeometry x="500" y="1120" width="140" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="34" value="Merge the metabolomic layer with model id over left join with the main dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="1020" width="140" height="60" as="geometry"/>
+                    <mxGeometry x="500" y="1530" width="140" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" value="CCle Metabolomics&lt;div&gt;OMNICS S Global Signature&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
-                    <mxGeometry x="710" y="1000" width="120" height="100" as="geometry"/>
+                    <mxGeometry x="780.63" y="1510" width="120" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="35" target="34" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -128,7 +125,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="Merge the Predetermined cosine values" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="1150" width="140" height="50" as="geometry"/>
+                    <mxGeometry x="500" y="1655" width="140" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="34" target="38" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -140,13 +137,13 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" value="Cosine Values from the PCA table" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
-                    <mxGeometry x="715" y="1145" width="110" height="55" as="geometry"/>
+                    <mxGeometry x="800" y="1650" width="110" height="55" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" value="Sort the dataset with decending values of Target RNA and Proteins and acending value of exclusion RNA and Proteins" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="485" y="1240" width="170" height="90" as="geometry"/>
+                    <mxGeometry x="485" y="1775" width="170" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="44" value="Calculate the Evidence score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="500" y="1390" width="140" height="50" as="geometry"/>
+                    <mxGeometry x="500" y="1930" width="140" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="42" target="44" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -157,35 +154,28 @@
                 <mxCell id="47" value="" style="edgeStyle=none;html=1;" parent="1" source="46" target="44" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="46" value="Evidence Score = Target Evidence score (1 - Exclusion Evidence score)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="710" y="1370" width="115" height="90" as="geometry"/>
+                <mxCell id="46" value="Evidence Score = Target Evidence score X (e^-(1.5 X Exclusion evidence percentile))" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="730.63" y="1910" width="170" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="53" value="" style="edgeStyle=none;html=1;" parent="1" source="48" target="46" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="51" value="" style="edgeStyle=none;html=1;" parent="1" source="50" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1042.5" y="1452.6047904191616" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="48" value="Target Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="683.75" y="1500" width="172.5" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="51" value="" style="edgeStyle=none;html=1;" parent="1" source="50" target="48" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="50" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="910" y="1480" width="110" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="58" value="" style="edgeStyle=none;html=1;" parent="1" source="55" target="48" edge="1">
+                <mxCell id="289" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="55" target="288">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="Exclusion Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="683.75" y="1640" width="172.5" height="70" as="geometry"/>
+                    <mxGeometry x="900" y="1005" width="172.5" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="" style="edgeStyle=none;html=1;" parent="1" source="57" target="55" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="910" y="1620" width="110" height="110" as="geometry"/>
+                    <mxGeometry x="1120" y="985" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="59" value="Calculate Confidence Score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="505" y="1780" width="130" height="50" as="geometry"/>
+                    <mxGeometry x="505" y="2065" width="130" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="60" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0.016;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="44" target="59" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -199,31 +189,31 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="61" value="Confidence score = (Modalities present + Agreement)/ 2" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="710" y="1745" width="120" height="120" as="geometry"/>
+                    <mxGeometry x="755.63" y="2030" width="120" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="65" value="" style="edgeStyle=none;html=1;" parent="1" source="62" target="61" edge="1">
+                <mxCell id="297" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="62" target="292">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="62" value="Modalities = (RNA present + Protein Present + HPA present )/ len(Total expected values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="681.25" y="1940" width="172.5" height="60" as="geometry"/>
+                <mxCell id="62" value="Modalities Present = (RNA present + Protein Present + HPA present )/ len(Total expected values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="1230" width="172.5" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="67" value="" style="edgeStyle=none;html=1;" parent="1" source="66" target="62" edge="1">
+                <mxCell id="298" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="66" target="293">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="Agreement = 1/ (1+Var(HPA+Protein+RNA)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="683.75" y="2070" width="172.5" height="70" as="geometry"/>
+                    <mxGeometry x="710" y="1355" width="172.5" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="69" value="" style="edgeStyle=none;html=1;" parent="1" source="68" target="66" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="Here the missing values should not be imputed with 0 as it will increase the variance and decrease the agreement" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="910" y="2050" width="110" height="110" as="geometry"/>
+                    <mxGeometry x="970" y="1335" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="" style="edgeStyle=none;html=1;" parent="1" source="71" target="62" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="71" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="910" y="1915" width="110" height="110" as="geometry"/>
+                    <mxGeometry x="970" y="1205" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="73" value="Score the Cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="2230" width="180" height="70" as="geometry"/>
@@ -240,6 +230,9 @@
                 <mxCell id="75" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Score = Similarity (Cosine Values) X Evidence Score X Confidence Score&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="722.5" y="2232.5" width="133.75" height="65" as="geometry"/>
                 </mxCell>
+                <mxCell id="302" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="77" target="300">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="77" value="Filter the dataset for ESNG ID and Protein id for targets" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-50" y="660" width="140" height="60" as="geometry"/>
                 </mxCell>
@@ -252,16 +245,14 @@
                         <mxPoint x="140" y="710" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="84" value="" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="77" target="87" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="20" y="970" as="sourcePoint"/>
-                    </mxGeometry>
+                <mxCell id="311" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="87" target="91">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="Merge the metabolomic layer with model id over left join with the main dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-50" y="780" width="140" height="60" as="geometry"/>
+                    <mxGeometry x="-51.25" y="1200" width="142.5" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="88" value="CCle Metabolomics&lt;div&gt;OMNICS S Global Signature&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
-                    <mxGeometry x="-295" y="760" width="120" height="100" as="geometry"/>
+                    <mxGeometry x="-250" y="1180" width="120" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="88" target="87" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -269,29 +260,23 @@
                         <mxPoint x="140" y="830" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="90" value="" style="edgeStyle=none;html=1;" parent="1" source="91" target="95" edge="1">
+                <mxCell id="309" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="91" target="95">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="91" value="Merge the Predetermined cosine values" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-50" y="910" width="140" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="92" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="87" target="91" edge="1">
-                    <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="-70" y="860" as="sourcePoint"/>
-                        <mxPoint x="-20" y="810" as="targetPoint"/>
-                    </mxGeometry>
+                    <mxGeometry x="-62.5" y="1300" width="165" height="55" as="geometry"/>
                 </mxCell>
                 <mxCell id="93" value="" style="edgeStyle=none;html=1;" parent="1" source="94" target="91" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="Cosine Values from the PCA table" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
-                    <mxGeometry x="-295" y="905" width="110" height="55" as="geometry"/>
+                    <mxGeometry x="-230" y="1300" width="110" height="55" as="geometry"/>
                 </mxCell>
                 <mxCell id="95" value="Sort the dataset with decending values of Target RNA and Proteins and acending value of exclusion RNA and Proteins" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-65" y="1000" width="170" height="90" as="geometry"/>
+                    <mxGeometry x="-65" y="1390" width="170" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="96" value="Calculate the Evidence score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-50" y="1150" width="140" height="50" as="geometry"/>
+                    <mxGeometry x="-70" y="1520" width="180" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="97" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="95" target="96" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -303,22 +288,22 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="Evidence Score = Target Evidence score&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-310" y="1130" width="115" height="90" as="geometry"/>
+                    <mxGeometry x="-307.5" y="1500" width="115" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" value="" style="edgeStyle=none;html=1;" parent="1" source="101" target="99" edge="1">
+                <mxCell id="301" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="101" target="300">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="101" value="Target Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-338.75" y="1260" width="172.5" height="70" as="geometry"/>
+                    <mxGeometry x="-287.5" y="775" width="172.5" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="102" value="" style="edgeStyle=none;html=1;" parent="1" source="103" target="101" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="103" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="-530" y="1240" width="110" height="110" as="geometry"/>
+                    <mxGeometry x="-450" y="752.5" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="108" value="Calculate Confidence Score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-45" y="1405" width="130" height="50" as="geometry"/>
+                    <mxGeometry x="-70" y="1655" width="180" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="109" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0.016;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="96" target="108" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -326,40 +311,32 @@
                         <mxPoint x="220" y="1340" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="110" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="111" target="108" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="130" y="1590" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="-60" y="1430"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="111" value="Confidence score = (Modalities present + Agreement)/ 2" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="-350" y="1370" width="120" height="120" as="geometry"/>
+                    <mxGeometry x="-310" y="1625" width="120" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="112" value="" style="edgeStyle=none;html=1;" parent="1" source="113" target="111" edge="1">
+                <mxCell id="305" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="113" target="303">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="113" value="Modalities = (RNA present + Protein Present + HPA present )/ len(Total expected values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-376.25" y="1540" width="172.5" height="60" as="geometry"/>
+                    <mxGeometry x="-286.25" y="940" width="172.5" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="114" value="" style="edgeStyle=none;html=1;" parent="1" source="115" target="113" edge="1">
+                <mxCell id="308" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="115" target="306">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="115" value="Agreement = 1/ (1+Var(HPA+Protein+RNA)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-376.25" y="1675" width="172.5" height="70" as="geometry"/>
+                    <mxGeometry x="-287.5" y="1065" width="172.5" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="116" value="" style="edgeStyle=none;html=1;" parent="1" source="117" target="115" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="117" value="Here the missing values should not be imputed with 0 as it will increase the variance and decrease the agreement" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="-620" y="1655" width="110" height="110" as="geometry"/>
+                    <mxGeometry x="-447.5" y="1045" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="118" value="" style="edgeStyle=none;html=1;" parent="1" source="119" target="113" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="119" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="-620" y="1515" width="110" height="110" as="geometry"/>
+                    <mxGeometry x="-450" y="915" width="110" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="120" value="Score the Cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-70" y="1795" width="180" height="70" as="geometry"/>
@@ -374,7 +351,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="123" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Score = Similarity (Cosine Values) X Evidence Score X Confidence Score&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-337.5" y="1800" width="133.75" height="65" as="geometry"/>
+                    <mxGeometry x="-310" y="1795" width="133.75" height="65" as="geometry"/>
                 </mxCell>
                 <mxCell id="124" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="18" target="77" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -902,6 +879,75 @@
                         <mxPoint x="85" y="327.9961538461538" as="sourcePoint"/>
                         <mxPoint x="265" y="254.15" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="286" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="277" target="285">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="277" value="Calculate the Target Evidence Score Using target dataset" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="880" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="280" value="Target Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="703.13" y="875" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="283" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="281" target="280">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="281" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="855" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="282" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="280" target="277">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="670" y="1020" as="sourcePoint"/>
+                        <mxPoint x="720" y="970" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="291" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="285" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="285" value="Calculate the Exclusion Evidence percentile using exclusion dataset" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="1010" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="290" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="288" target="285">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="288" value="Calculate the Exclusion Evidence Percentile" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="691.25" y="1005" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="295" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="292" target="293">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="292" value="Calculate the Modalities Present" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="1230" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="296" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="293" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="293" value="Calculate the Agreement Score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="1360" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="299" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="111" target="108">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-200" y="1490" as="sourcePoint"/>
+                        <mxPoint x="-150" y="1440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="304" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="300" target="303">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="300" value="Calculate the Evidence score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="787.5" width="140" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="307" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="303" target="306">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="303" value="Calculate the Modalities Present" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="940" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="310" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="306" target="87">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="306" value="Calculate the Agreement Score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="1070" width="140" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
