@@ -1,15 +1,3 @@
-"""
-LLM explanation layer.
-
-Generates a rank-by-rank narrative report for the top 10 cell lines.
-
-Design constraint: the model summarises pre-computed results only. Every
-biological statement it can make is supplied to it as data in the prompt;
-it is explicitly forbidden from introducing facts from its own parametric
-knowledge. This keeps the narrative auditable against the underlying
-tables.
-"""
-
 import re
 import pandas as pd
 
@@ -23,13 +11,9 @@ SEED = 42
 MAX_ATTEMPTS = 2
 
 
-# ----------------------------------------------------------------------
-# Prompt components
-# ----------------------------------------------------------------------
 
 def _methodology_text(exclusionapplied, diseasename, fusionfilter,
                       mutationfilter, targetgenelist, exclusiongenelist):
-    """Prose description of the pipeline and the filters active for this query."""
     try:
         target_str = ", ".join(targetgenelist) if targetgenelist \
             else "(gene symbols not supplied)"
@@ -81,7 +65,6 @@ def _methodology_text(exclusionapplied, diseasename, fusionfilter,
 
 
 def _num(row, key, default=0.0):
-    """Read a numeric cell, treating a missing column and NaN alike."""
     val = row.get(key, None)
     if val is None or pd.isna(val):
         return float(default)
@@ -89,7 +72,6 @@ def _num(row, key, default=0.0):
 
 
 def _text(row, key, default='Not specified'):
-    """Read a text cell, treating a missing column and NaN alike."""
     val = row.get(key, None)
     if val is None or (not isinstance(val, str) and pd.isna(val)):
         return default
@@ -98,14 +80,6 @@ def _text(row, key, default='Not specified'):
 
 
 def _score_driver(n_evid, n_sim, conf):
-    """
-    Work out, arithmetically, which component constrains the final score.
-
-    final_score is the product of the three components, so the smallest
-    one is the limiting factor and the largest is what the line has going
-    for it. This is computed here rather than left to the model, which
-    previously inferred the driver backwards from the rank position.
-    """
     parts = {"evidence": n_evid, "similarity": n_sim, "confidence": conf}
     strongest = max(parts, key=parts.get)
     weakest = min(parts, key=parts.get)
@@ -123,18 +97,6 @@ def _score_driver(n_evid, n_sim, conf):
 
 
 def _relative_label(value, series):
-    """
-    Describe a value against the spread of that same metric across the
-    displayed cell lines.
-
-    Comparing components within a single row is misleading here: the three
-    metrics occupy different ranges (confidence sits near 0.99 for any
-    line with complete data, evidence around 0.5), so a within-row
-    comparison would call a confidence of 0.83 'higher than evidence'
-    when it is in fact the lowest confidence in the set. The reference
-    frame is therefore the other displayed lines, and the report states
-    that frame explicitly.
-    """
     lo, hi = float(series.min()), float(series.max())
     if hi - lo < 1e-9:
         return "the same as every other line shown"
@@ -147,13 +109,6 @@ def _relative_label(value, series):
 
 
 def _confidence_reason(mod, agree):
-    """
-    Explain the confidence score from its two inputs.
-
-    confidence = (modality_score + agreement) / 2, so a low value has
-    exactly two possible causes and they are distinguishable from the
-    data rather than inferred.
-    """
     if mod < 0.99 and agree < 0.8:
         return (f"both inputs are reduced: proteomics abundance is missing "
                 f"(modality {mod:.4f}) and the available modalities "
@@ -169,10 +124,6 @@ def _confidence_reason(mod, agree):
 
 
 def _comparison_to_previous(row, prev):
-    """
-    State which component accounts for this line ranking below the one
-    above it, by finding the largest component difference.
-    """
     if prev is None:
         return None
 
@@ -199,13 +150,6 @@ def _comparison_to_previous(row, prev):
 
 
 def _format_rows_for_prompt(df):
-    """
-    One data block per cell line: metrics, data completeness, and every
-    piece of biological context the pipeline holds for that line.
-
-    The context fields are what the model is permitted to draw on when
-    writing the biological portion of each paragraph.
-    """
     try:
         ev_series = df.apply(
             lambda r: _num(r, 'net_evidence', _num(r, 'target_evidence')), axis=1)
@@ -273,13 +217,6 @@ def _format_rows_for_prompt(df):
 
 
 def _rank_of(value, series):
-    """
-    Position of a value among the displayed lines, 1 = highest.
-
-    Rank position rather than min-max position: a value at 37% of the
-    observed range can still be the third highest of ten, and describing
-    it as 'among the lowest' misleads.
-    """
     return int((series > float(value)).sum()) + 1
 
 
@@ -301,17 +238,6 @@ COMPONENT_MEANING = {
 
 def render_report(df, targetgenelist=None, exclusiongenelist=None,
                   diseasename=None, fusionfilter=False, mutationfilter=False):
-    """
-    Assemble the report deterministically from the scored table.
-
-    Every figure is read from the row it belongs to, so the narrative
-    cannot disagree with the results table.
-
-    A genuine cause can be given only for the confidence score, which
-    decomposes into modality_score and agreement. Evidence and similarity
-    arrive as single aggregates with no per-modality breakdown in the
-    table, so what each measures is stated instead of inventing a cause.
-    """
     n = len(df)
     ev = df.apply(lambda r: _num(r, 'net_evidence',
                                  _num(r, 'target_evidence')), axis=1)
@@ -370,12 +296,6 @@ def render_report(df, targetgenelist=None, exclusiongenelist=None,
                 f"Its weakest is {worst} at {vals[worst]:.4f}, "
                 f"{_place(ranks[worst], n)}; {why(worst)}.")
 
-        # The limiting factor is a within-row question: the final score is
-        # a product, so the smallest of the three raw values constrains it.
-        # This is not the same as the component ranked lowest against the
-        # other cell lines - confidence sits near 0.99 for every complete
-        # line, so it can rank last among the ten while still being the
-        # largest of that line's own three components.
         limiting = min(vals, key=vals.get)
         sent.append(
             f"Of its own three components, {limiting} is the smallest at "
@@ -388,7 +308,6 @@ def render_report(df, targetgenelist=None, exclusiongenelist=None,
         out.append(" ".join(sent))
         out.append("")
 
-    # ---- caveats -----------------------------------------------------
     first, last = df.iloc[0], df.iloc[-1]
     f_name = _text(first, 'cell_line_name', 'the top line')
     l_name = _text(last, 'cell_line_name', 'the last line')
@@ -503,7 +422,6 @@ SYSTEM_PROMPT = (
 
 def _build_messages(df, exclusionapplied, diseasename, fusionfilter,
                     mutationfilter, targetgenelist, exclusiongenelist):
-    """Build the system and user prompts from an already-sorted frame."""
     try:
         methodology = _methodology_text(
             exclusionapplied, diseasename, fusionfilter, mutationfilter,
@@ -513,8 +431,7 @@ def _build_messages(df, exclusionapplied, diseasename, fusionfilter,
         target_str = ", ".join(targetgenelist) if targetgenelist \
             else "the requested target gene"
 
-        # Counted here rather than left to the model, which previously
-        # miscounted the flagged lines in the closing caveats.
+
         n = len(df)
         n_mut = sum(1 for _, r in df.iterrows()
                     if _text(r, 'mutation_flag', 'no').strip().lower()
@@ -527,7 +444,7 @@ def _build_messages(df, exclusionapplied, diseasename, fusionfilter,
         n_incomplete = sum(1 for _, r in df.iterrows()
                            if _num(r, 'modality_score') < 0.99)
 
-        # Caveat 1: what actually separates the first and last line shown.
+
         first, last = df.iloc[0], df.iloc[-1]
         f_name = _text(first, 'cell_line_name', 'the top line')
         l_name = _text(last, 'cell_line_name', 'the last line')
@@ -546,7 +463,7 @@ def _build_messages(df, exclusionapplied, diseasename, fusionfilter,
             f"most in the {widest} component "
             f"({gaps[widest][0]:.4f} against {gaps[widest][1]:.4f})")
 
-        # Caveat 3: subgroup composition.
+       
         subs = [_text(r, 'biological_sub_group') for _, r in df.iterrows()]
         subs = [s for s in subs if s and s != 'Not specified']
         if subs:
@@ -582,9 +499,6 @@ def _build_messages(df, exclusionapplied, diseasename, fusionfilter,
             f"indicate contamination, genetic modification, or line "
             f"quality.\n")
 
-        # Bare headers only. The per-paragraph requirement is stated once in
-        # the system prompt rather than repeated ten times, which would bury
-        # the data blocks under boilerplate.
         headers = "\n\n".join(
             f"Rank {rank} - {_text(row, 'cell_line_name', 'Unknown')} "
             f"({_text(row, 'primary_disease', 'Unknown')})"
@@ -632,13 +546,8 @@ def _build_messages(df, exclusionapplied, diseasename, fusionfilter,
         raise
 
 
-# ----------------------------------------------------------------------
-# Backend
-# ----------------------------------------------------------------------
-
 def ollama_chat(system_prompt, user_prompt, model='llama3.2:3b',
                 host='http://localhost:11434', timeout=1200, seed=SEED):
-    """Local Ollama chat call. Seeded for reproducibility."""
     try:
         import requests
         log.info(f"ollama_chat: calling model '{model}' at {host}")
@@ -672,20 +581,8 @@ def ollama_chat(system_prompt, user_prompt, model='llama3.2:3b',
         raise
 
 
-# ----------------------------------------------------------------------
-# Structural validation
-# ----------------------------------------------------------------------
 
 def _strip_echoed_prompt(text):
-    """
-    Remove any prompt preamble the model reproduced before the report.
-
-    Small models frequently restate the methodology block and query
-    inputs before starting. The report proper always begins at the
-    'Overview' heading, so anything before it is discarded. If no
-    Overview heading is found the text is returned untouched rather than
-    risking the loss of real content.
-    """
     m = re.search(r'(?im)^\s*Overview\s*$', text)
     if m and m.start() > 0:
         return text[m.start():].lstrip()
@@ -693,23 +590,10 @@ def _strip_echoed_prompt(text):
 
 
 def _normalise(s):
-    """Lowercase and strip non-alphanumerics for tolerant name matching."""
     return re.sub(r'[^a-z0-9]', '', str(s).lower())
 
 
 def _missing_ranks(explanation, df):
-    """
-    Return the rank numbers whose cell line is absent from the generated
-    text.
-
-    Matching is on the cell line NAME rather than a 'Rank N' prefix: the
-    model frequently writes the heading as 'G-361 (Skin Cancer)' rather
-    than 'Rank 1 - G-361 (Skin Cancer)', so a prefix-based check reports
-    every rank missing from an otherwise complete report. Names come from
-    the data and cannot be rephrased, which makes them the reliable
-    anchor. Punctuation and case are normalised out because 'SW 1783' may
-    be written 'SW1783'.
-    """
     haystack = _normalise(explanation)
     missing = []
     for rank, (_, row) in enumerate(df.iterrows(), start=1):
@@ -719,9 +603,6 @@ def _missing_ranks(explanation, df):
     return missing
 
 
-# ----------------------------------------------------------------------
-# Entry point
-# ----------------------------------------------------------------------
 
 REPHRASE_SYSTEM_PROMPT = (
     "You are an editor. You will be given a factually verified cell line "
@@ -744,17 +625,11 @@ REPHRASE_SYSTEM_PROMPT = (
 )
 
 
-# Only genuine quantity names. Generic connectives such as "of" or
-# "ranks" were tried and rejected: they match almost anywhere, so a
-# faithful rephrase changed the "label" and was wrongly refused.
 LABEL_WORDS = (
     "evidence", "similarity", "confidence", "final", "modality",
     "agreement", "subgroup",
 )
 
-# Conversational lead-ins the model adds despite being told not to.
-# Matched only at the very start, and only up to the first colon, so a
-# legitimate sentence containing one of these words is untouched.
 _PREAMBLE = re.compile(
     r"(?i)^\s*(?:sure[,!.]?\s*)?"
     r"(?:here(?:'s| is)|this is|below is|i(?:'ve| have) rewritten)?"
@@ -774,15 +649,6 @@ def _numbers_in(text):
 
 
 def _labelled_numbers(text):
-    """
-    Pair each figure with the nearest label word preceding it.
-
-    Comparing bare figures is not sufficient: a rewrite can keep every
-    number and still attach it to the wrong quantity. This was observed
-    in practice - a final score of 0.6838 was re-described as a
-    similarity score, which a set-of-figures check cannot detect. Pairing
-    each figure with its nearest preceding label catches that.
-    """
     pairs = []
     for m in re.finditer(r'\d+(?:\.\d+)?', text):
         window = text[max(0, m.start() - 60):m.start()].lower()
@@ -793,22 +659,14 @@ def _labelled_numbers(text):
 
 
 def _strip_preamble(text):
-    """Remove a conversational lead-in such as 'Here is the rewritten...'."""
     return _PREAMBLE.sub("", text.strip(), count=1).strip()
 
 
 def _rewrite_is_safe(source, candidate):
-    """
-    Accept a rewritten section only if it preserves every figure and the
-    quantity each figure refers to, and adds no conversational framing.
-    """
     if not candidate:
         return False, "empty"
     if _numbers_in(candidate) != _numbers_in(source):
         return False, "figures changed"
-    # Compare in order, and only where the source figure carries a real
-    # quantity name. An unlabelled figure is left alone, so ordinary
-    # rewording is not punished.
     s_pairs, c_pairs = _labelled_numbers(source), _labelled_numbers(candidate)
     if len(s_pairs) != len(c_pairs):
         return False, "figure count changed"
@@ -825,23 +683,13 @@ def _rewrite_is_safe(source, candidate):
 
 
 def _verify_rephrase(source, candidate, df):
-    """
-    Confirm the model rewrote the report without altering its facts.
-
-    Three checks, each targeting a failure actually observed with
-    llama3.2:3b: dropped cell lines, invented or omitted figures, and -
-    most seriously - scores migrating between rows.
-
-    Returns a list of problems; empty means the rewrite is safe to use.
-    """
     problems = []
 
-    # 1. every cell line still present
+
     missing = _missing_ranks(candidate, df)
     if missing:
         problems.append(f"missing ranks {missing}")
 
-    # 2. the exact same multiset of figures, nothing added or lost
     src_nums, cand_nums = _numbers_in(source), _numbers_in(candidate)
     if src_nums != cand_nums:
         added = [x for x in cand_nums if x not in src_nums]
@@ -851,7 +699,6 @@ def _verify_rephrase(source, candidate, df):
         if lost:
             problems.append(f"dropped figures {lost[:5]}")
 
-    # 3. each line's own figures still sit in its own paragraph
     src_paras = re.split(r'(?m)^Rank \d+ - ', source)[1:]
     cand_paras = re.split(r'(?m)^Rank \d+ - ', candidate)[1:]
     if len(src_paras) == len(cand_paras):
@@ -864,7 +711,6 @@ def _verify_rephrase(source, candidate, df):
 
 
 def _split_sections(report):
-    """Split the draft into (heading, body) pairs, keeping order."""
     lines = report.split("\n")
     sections, head, body = [], None, []
     for ln in lines:
@@ -904,23 +750,6 @@ def generate_explanation(final_top10_df, targetgenelist=None,
                          llm_callable=None, model='llama3.2:3b',
                          host='http://localhost:11434', save=False,
                          use_llm=True):
-    """
-    Produce the top-10 explanation.
-
-    Facts are computed in Python and assembled into a verified draft; the
-    LLM then rewrites that draft into more fluent prose. Rewriting is done
-    one section at a time rather than in a single pass, for two reasons:
-    a short paragraph is a far easier task for a 3B model than a
-    2,000-word report, and a failure is contained to the paragraph that
-    failed instead of discarding the whole rewrite.
-
-    Each rewritten section is checked figure by figure against its source.
-    Any section whose figures were altered, invented or dropped falls back
-    to the deterministic text, so the report as a whole can never disagree
-    with the results table.
-
-    Set use_llm=False to skip the model entirely.
-    """
     try:
         log.info("generate_explanation: starting")
         if final_top10_df is None or final_top10_df.empty:
@@ -951,8 +780,7 @@ def generate_explanation(final_top10_df, targetgenelist=None,
                         if llm_callable is not None:
                             cand = caller(PARA_SYSTEM_PROMPT, body)
                         else:
-                            # Seed varies per attempt; a fixed seed makes a
-                            # retry byte-identical and therefore pointless.
+                            
                             cand = caller(PARA_SYSTEM_PROMPT, body,
                                           model=model, host=host,
                                           seed=SEED + attempt)

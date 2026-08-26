@@ -17,3 +17,7 @@ __pycache__/
 
 # === Ignore VS Code Configuration ===
 .vscode/
+
+#=== ignore the agent and claude
+.agents/
+.claude/
