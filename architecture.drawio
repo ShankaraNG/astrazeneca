@@ -1,0 +1,1263 @@
+<mxfile host="65bd71144e">
+    <diagram name="Application Flow" id="aN1Bqacx3pErdp6P9ygm">
+        <mxGraphModel dx="1552" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="220" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="220" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Fetch ESNG ID" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="350" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="ESNG look up table" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="340" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="7" target="8" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="390" as="sourcePoint"/>
+                        <mxPoint x="430" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4" target="7" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="390" as="sourcePoint"/>
+                        <mxPoint x="430" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="Gene Name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="298" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Fetch Protein ID" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="450" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="7" target="13" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="390" as="sourcePoint"/>
+                        <mxPoint x="430" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="Protein Id look up table" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="440" width="90" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="13" target="15" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="470" as="sourcePoint"/>
+                        <mxPoint x="430" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="Exclusion Criteria exists" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="235" y="540" width="150" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="13" target="18" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="580" as="sourcePoint"/>
+                        <mxPoint x="430" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Filter the dataset for ESNG ID and Protein id for targets" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="660" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="18" target="20" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="580" as="sourcePoint"/>
+                        <mxPoint x="430" y="530" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="570" y="585"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="405" y="550" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="HPA RNA Table&lt;div&gt;Deepmap Omnics Table&lt;/div&gt;&lt;div&gt;Harmonics MS table&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="640" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="24" target="20" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="640" y="760" as="sourcePoint"/>
+                        <mxPoint x="690" y="710" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="284" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="26" target="277">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Filter the dataset for ESNG ID and Protein id for exclusion criteria" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="780" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="HPA RNA Table&lt;div&gt;Deepmap Omnics Table&lt;/div&gt;&lt;div&gt;Harmonics MS table&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="760" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="27" target="26" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="640" y="880" as="sourcePoint"/>
+                        <mxPoint x="690" y="830" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="20" target="26" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="410" y="760" as="sourcePoint"/>
+                        <mxPoint x="460" y="710" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="294" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30" target="292">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Combine exclusion criteria dataframe with that of target dataframe" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1120" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Merge the metabolomic layer with model id over left join with the main dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1530" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="CCle Metabolomics&lt;div&gt;OMNICS S Global Signature&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="780.63" y="1510" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="35" target="34" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="640" y="1120" as="sourcePoint"/>
+                        <mxPoint x="690" y="1070" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="" style="edgeStyle=none;html=1;" parent="1" source="38" target="42" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Merge the Predetermined cosine values" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1655" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="34" target="38" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="1100" as="sourcePoint"/>
+                        <mxPoint x="530" y="1050" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="" style="edgeStyle=none;html=1;" parent="1" source="40" target="38" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="Cosine Values from the PCA table" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="1650" width="110" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Sort the dataset with decending values of Target RNA and Proteins and acending value of exclusion RNA and Proteins" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="485" y="1775" width="170" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Calculate the Evidence score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="1930" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="42" target="44" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="1400" as="sourcePoint"/>
+                        <mxPoint x="530" y="1350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="" style="edgeStyle=none;html=1;" parent="1" source="46" target="44" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Evidence Score = Target Evidence score X (e^-(1.5 X Exclusion evidence percentile))" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="730.63" y="1910" width="170" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="edgeStyle=none;html=1;" parent="1" source="50" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1042.5" y="1452.6047904191616" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="289" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="55" target="288">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Exclusion Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="1005" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="edgeStyle=none;html=1;" parent="1" source="57" target="55" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="985" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="Calculate Confidence Score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="505" y="2065" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0.016;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="44" target="59" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="562" y="1441" as="sourcePoint"/>
+                        <mxPoint x="770" y="1580" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="63" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="61" target="59" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="680" y="1830" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" value="Confidence score = (Modalities present + Agreement)/ 2" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="755.63" y="2030" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="297" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="62" target="292">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="Modalities Present = (RNA present + Protein Present + HPA present )/ len(Total expected values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="1230" width="172.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="298" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="66" target="293">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="Agreement = 1/ (1+Var(HPA+Protein+RNA)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="710" y="1355" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="" style="edgeStyle=none;html=1;" parent="1" source="68" target="66" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="Here the missing values should not be imputed with 0 as it will increase the variance and decrease the agreement" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="1335" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="" style="edgeStyle=none;html=1;" parent="1" source="71" target="62" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="970" y="1205" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="Score the Cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="2230" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="59" target="73" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="720" y="1810" as="sourcePoint"/>
+                        <mxPoint x="770" y="1760" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="76" value="" style="edgeStyle=none;html=1;" parent="1" source="75" target="73" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Score = Similarity (Cosine Values) X Evidence Score X Confidence Score&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="722.5" y="2232.5" width="133.75" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="302" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="77" target="300">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="Filter the dataset for ESNG ID and Protein id for targets" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-50" y="660" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="HPA RNA Table&lt;div&gt;Deepmap Omnics Table&lt;/div&gt;&lt;div&gt;Harmonics MS table&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="-295" y="640" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="78" target="77" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90" y="760" as="sourcePoint"/>
+                        <mxPoint x="140" y="710" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="311" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="87" target="91">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="Merge the metabolomic layer with model id over left join with the main dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-51.25" y="1200" width="142.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="CCle Metabolomics&lt;div&gt;OMNICS S Global Signature&lt;/div&gt;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="-250" y="1180" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="88" target="87" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90" y="880" as="sourcePoint"/>
+                        <mxPoint x="140" y="830" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="309" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="91" target="95">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="Merge the Predetermined cosine values" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-62.5" y="1300" width="165" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="" style="edgeStyle=none;html=1;" parent="1" source="94" target="91" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="Cosine Values from the PCA table" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="-230" y="1300" width="110" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="Sort the dataset with decending values of Target RNA and Proteins and acending value of exclusion RNA and Proteins" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-65" y="1390" width="170" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="Calculate the Evidence score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="1520" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="95" target="96" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-70" y="1160" as="sourcePoint"/>
+                        <mxPoint x="-20" y="1110" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="98" value="" style="edgeStyle=none;html=1;" parent="1" source="99" target="96" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="Evidence Score = Target Evidence score&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-307.5" y="1500" width="115" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="301" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="101" target="300">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="101" value="Target Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-287.5" y="775" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="" style="edgeStyle=none;html=1;" parent="1" source="103" target="101" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="-450" y="752.5" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="Calculate Confidence Score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="1655" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0.016;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="96" target="108" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="12" y="1201" as="sourcePoint"/>
+                        <mxPoint x="220" y="1340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="111" value="Confidence score = (Modalities present + Agreement)/ 2" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="-310" y="1625" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="305" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="113" target="303">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" value="Modalities = (RNA present + Protein Present + HPA present )/ len(Total expected values)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-286.25" y="940" width="172.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="308" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="115" target="306">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" value="Agreement = 1/ (1+Var(HPA+Protein+RNA)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-287.5" y="1065" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="" style="edgeStyle=none;html=1;" parent="1" source="117" target="115" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="Here the missing values should not be imputed with 0 as it will increase the variance and decrease the agreement" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="-447.5" y="1045" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="" style="edgeStyle=none;html=1;" parent="1" source="119" target="113" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="-450" y="915" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="Score the Cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="1795" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="108" target="120" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="1570" as="sourcePoint"/>
+                        <mxPoint x="220" y="1520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="122" value="" style="edgeStyle=none;html=1;" parent="1" source="123" target="120" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Score = Similarity (Cosine Values) X Evidence Score X Confidence Score&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-310" y="1795" width="133.75" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="18" target="77" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-30" y="480" as="sourcePoint"/>
+                        <mxPoint x="20" y="430" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="20" y="585"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="125" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="550" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="" style="edgeStyle=none;html=1;" parent="1" source="126" target="129" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="Sort the Scores in decending order" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="235" y="2370" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="120" target="126" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="2210" as="sourcePoint"/>
+                        <mxPoint x="220" y="2160" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="20" y="2410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="128" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="73" target="126" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="170" y="2210" as="sourcePoint"/>
+                        <mxPoint x="220" y="2160" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="570" y="2410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="132" value="" style="edgeStyle=none;html=1;" parent="1" source="129" target="131" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="Select the top 20 ranked cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="2540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="142" value="" style="edgeStyle=none;html=1;" parent="1" source="131" target="141" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="Tie Breaker sorting&lt;br&gt;(secondary ranking)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="2640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="" style="edgeStyle=none;html=1;" parent="1" source="133" target="131" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="Tie breaker 1: HIgher Target evidence" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="385" y="2640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="" style="edgeStyle=none;html=1;" parent="1" source="135" target="133" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="Tie breaker 2: Lower Exclusion Criteria" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="385" y="2740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="" style="edgeStyle=none;html=1;" parent="1" source="137" target="135" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="Tie breaker 3: Higher Similarity score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="385" y="2840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="140" value="" style="edgeStyle=none;html=1;" parent="1" source="139" target="137" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="Tie breaker 5: Higher Confidence score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="385" y="2940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" value="Select the Top 10 cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="2770" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="148" value="" style="edgeStyle=none;html=1;" parent="1" source="143" target="147" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="143" value="Get the stripped cell line names" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="3040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="144" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="141" target="143" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="2900" as="sourcePoint"/>
+                        <mxPoint x="300" y="2850" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="146" value="" style="edgeStyle=none;html=1;" parent="1" source="145" target="143" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="145" value="Merge the dataset with deepmap sample info dataset" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="3030" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="152" value="" style="edgeStyle=none;html=1;" parent="1" source="147" target="151" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="147" value="Mutation Flagging&lt;div&gt;get the cleaned dataset&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="3190" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="150" value="" style="edgeStyle=none;html=1;" parent="1" source="149" target="147" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="149" value="from the dataset OmicsSomaticMutationsProfile" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="385" y="3180" width="185" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="154" value="" style="edgeStyle=none;html=1;" parent="1" source="151" target="153" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="151" value="Filter the dataset by the top 10 selected cell line" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="3290" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" value="" style="edgeStyle=none;html=1;" parent="1" source="153" target="155" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="153" value="Check for the gene by using ESNG ID for the column&amp;nbsp;EnsemblGeneID" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="207.5" y="3400" width="135" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="158" value="" style="edgeStyle=none;html=1;" parent="1" source="155" target="157" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="Gene ID from target or excusion exists?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="197.5" y="3520" width="155" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="" style="edgeStyle=none;html=1;" parent="1" source="157" target="163" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="157" value="Flag for the mutation column as yes" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="3670" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="3628" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" value="Flag for mutation column as NO" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="405" y="3620" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" value="" style="endArrow=classic;html=1;entryX=0.55;entryY=-0.02;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="160" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="3570" as="sourcePoint"/>
+                        <mxPoint x="300" y="3510" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="470" y="3570"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="162" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="3540" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="167" value="" style="edgeStyle=none;html=1;" parent="1" source="163" target="166" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="163" value="Severity check" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="3780" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="" style="edgeStyle=none;html=1;" parent="1" source="166" target="169" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="166" value="Ampatho genecity exists?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="3900" width="115" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="173" value="" style="edgeStyle=none;html=1;" parent="1" source="169" target="172" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="ProveanPrediction&lt;br&gt;Exists ?" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry y="3900" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="171" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="167.5" y="3918" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="175" value="" style="edgeStyle=none;html=1;" parent="1" source="172" target="174" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" value="check for the condition if it is damaging or neutral or none" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="4070" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="174" value="Damaging = Flag High&lt;div&gt;Neutral = Flag Medium&lt;/div&gt;&lt;div&gt;None = Flag low&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="5" y="4160" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="176" value="yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="4018" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="191" value="" style="edgeStyle=none;html=1;" parent="1" source="177" target="190" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="177" value="Flag Mutation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="4260" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="178" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="174" target="177" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="160" y="4220" as="sourcePoint"/>
+                        <mxPoint x="210" y="4170" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="80" y="4290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="179" value="Return Mutation prediction&lt;br&gt;with ampatogenic value" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-115" y="4240" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="180" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="169" target="181" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="160" y="4140" as="sourcePoint"/>
+                        <mxPoint x="-100" y="4080" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-200" y="3955"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="181" value="Check for VEPImpact" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-260" y="4050" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="182" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="3918" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="181" target="177" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-110" y="4140" as="sourcePoint"/>
+                        <mxPoint x="-60" y="4090" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-200" y="4290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="184" value="Return with Ampatho genic value&amp;nbsp;&lt;div&gt;and the mutation prediction&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-410" y="4170" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="Check for VEPImpact" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="4070" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="186" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="166" target="185" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="270" y="3980" as="sourcePoint"/>
+                        <mxPoint x="320" y="3930" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="520" y="3955"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="187" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="3908" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="188" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="185" target="177" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="270" y="4220" as="sourcePoint"/>
+                        <mxPoint x="320" y="4170" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="520" y="4290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="189" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Return Mutation prediction&lt;/span&gt;&lt;br style=&quot;forced-color-adjust: none; color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;with null value for ampathogenic value&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="4200" width="220" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="193" value="" style="edgeStyle=none;html=1;" parent="1" source="190" target="192" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="190" value="Hyper link a mutation table for that cell line" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="4370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="197" value="" style="edgeStyle=none;html=1;" parent="1" source="192" target="194" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="192" value="Fusion Prediction" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="4490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="199" value="" style="edgeStyle=none;html=1;" parent="1" source="194" target="198" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="194" value="Get the fusion dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="4605" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" value="" style="edgeStyle=none;html=1;" parent="1" source="195" target="194" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="195" value="Get the dataset&lt;br&gt;OmicsFusionFilteredSupplementary" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="4590" width="230" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="201" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="198" target="202" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="271.70000000000005" y="4820" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="198" value="Filter for the target and exclusive genes for the given cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="4710" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="204" value="" style="edgeStyle=none;html=1;" parent="1" source="202" target="203" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="202" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;For that particular&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;celline with the gene 1&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;column if both gene&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;1 and gene 2&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;column has the&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&amp;nbsp;same gene&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="177.5" y="4810" width="190" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="208" value="" style="edgeStyle=none;html=1;" parent="1" source="203" target="207" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="203" value="Get the number of fusion and add it to the no of fusion column" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="5030" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="210" value="" style="edgeStyle=none;html=1;" parent="1" source="205" target="209" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="205" value="The number of fusion is 0" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="405" y="4950" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="206" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="202" target="205" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="4990" as="sourcePoint"/>
+                        <mxPoint x="370" y="4940" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="465" y="4895"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="215" value="" style="edgeStyle=none;html=1;" parent="1" source="207" target="214" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="207" value="Flag the fusion and display any one" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="5130" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="209" value="Flag the fusion as false" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="405" y="5080" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="211" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="4850" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="212" value="yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="292.5" y="4988" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="220" value="" style="edgeStyle=none;html=1;" parent="1" source="214" target="217" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="214" value="Alternative cell line prediction" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="212.5" y="5250" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="216" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="209" target="214" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="5200" as="sourcePoint"/>
+                        <mxPoint x="370" y="5150" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="460" y="5280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="222" value="" style="edgeStyle=none;html=1;" parent="1" source="217" target="221" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="217" value="Retrive the PCA matrix for the cell line" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="5360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="219" value="" style="edgeStyle=none;html=1;" parent="1" source="218" target="217" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="218" value="PCA matrix dataframe from the ML model" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="5350" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="226" value="" style="edgeStyle=none;html=1;" parent="1" source="221" target="223" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="221" value="Filter for the top 10 cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="207.5" y="5460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="228" value="" style="edgeStyle=none;html=1;" parent="1" source="223" target="227" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="223" value="Get the machine learning model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="207.5" y="5560" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="225" value="" style="edgeStyle=none;html=1;" parent="1" source="224" target="223" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="224" value="PCA matrix dataframe from the ML model" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="5550" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="230" value="" style="edgeStyle=none;html=1;" parent="1" source="227" target="229" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="227" value="Feed the dataset to the model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="207.5" y="5660" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="232" value="" style="edgeStyle=none;html=1;" parent="1" source="229" target="231" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="229" value="Get the cluster details out" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="207.5" y="5770" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="234" value="" style="edgeStyle=none;html=1;" parent="1" source="231" target="233" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="231" value="Take unique cluster id" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="207.5" y="5870" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="238" value="" style="edgeStyle=none;html=1;" parent="1" source="233" target="237" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="233" value="Filter out the cell lines with the cluster id from the original machine learning fed dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.25" y="5990" width="132.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="236" value="" style="edgeStyle=none;html=1;" parent="1" source="235" target="233" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="235" value="get the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="5995" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="240" value="" style="edgeStyle=none;html=1;" parent="1" source="237" target="239" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="237" value="Choose 10 cell lines from each cluster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.25" y="6120" width="132.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="253" value="" style="edgeStyle=none;html=1;" parent="1" source="239" target="252" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="239" value="Sort the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.25" y="6240" width="132.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="242" value="" style="edgeStyle=none;html=1;" parent="1" source="241" target="239" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="241" value="RNA value as high for target gene&lt;div&gt;Protein Value high for target gene&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="6215" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="244" value="" style="edgeStyle=none;html=1;" parent="1" source="243" target="241" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="243" value="Exclusion criteria exists" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="385" y="6380" width="125" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="245" value="RNA value low&lt;br&gt;Protein value low" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="535" y="6460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="248" value="" style="edgeStyle=none;html=1;" parent="1" source="247" target="243" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="247" value="Ignore" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="6520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="249" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="6468" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="250" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="245" target="243" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="6400" as="sourcePoint"/>
+                        <mxPoint x="370" y="6350" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="595" y="6420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="251" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="6388" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="252" value="Select the top 10 cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="203.75" y="6400" width="127.5" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="257" value="" style="edgeStyle=none;html=1;" parent="1" source="254" target="256" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="254" value="These are the alternative cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.25" y="6620" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="255" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.553;entryY=0.06;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="252" target="254" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="6640" as="sourcePoint"/>
+                        <mxPoint x="370" y="6590" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="256" value="Fetched the combined dataset and filter out for the top 10 cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="196.88" y="6750" width="128.75" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="261" value="" style="edgeStyle=none;html=1;" parent="1" source="258" target="260" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="258" value="Get the top 10 select cell lines" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="197.5" y="6870" width="128.75" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="259" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="256" target="258" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="320" y="6790" as="sourcePoint"/>
+                        <mxPoint x="370" y="6740" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="263" value="" style="edgeStyle=none;html=1;" parent="1" source="260" target="262" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="260" value="Embedd both the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.88" y="7010" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="265" value="" style="edgeStyle=none;html=1;" parent="1" source="262" target="264" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="262" value="Create the prompt&lt;span style=&quot;font-family: monospace; font-size: 0px; text-align: start; white-space: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Embedd%20both%20the%20dataset%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22201.88%22%20y%3D%227010%22%20width%3D%22120%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.25" y="7140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="267" value="" style="edgeStyle=none;html=1;" parent="1" source="264" target="266" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="264" value="Feed it to choosen LLM to say why it has selected these top 10 dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="201.88" y="7250" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="270" value="" style="edgeStyle=none;html=1;" parent="1" source="266" target="269" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="266" value="Arrange the top 10 selected table first&lt;br&gt;then the alternative table and then the explanation" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="193.13" y="7370" width="136.25" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="268" value="Add the response" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="7328" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="272" value="" style="edgeStyle=none;html=1;" parent="1" source="269" target="271" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="269" value="Return the response to the user" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="197.5" y="7500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="275" value="" style="edgeStyle=none;html=1;" parent="1" source="271" target="273" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="271" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="7600" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="273" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="367.5" y="7610" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="276" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="85" y="327.9961538461538" as="sourcePoint"/>
+                        <mxPoint x="265" y="254.15" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="286" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="277" target="285">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="277" value="Calculate the Target Evidence Score Using target dataset" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="880" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="280" value="Target Evidence score = (RNA+Protein+HPA)/len(values)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="703.13" y="875" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="283" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="281" target="280">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="281" value="Incase if any values is missing instead of removing it take the value as 0" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="855" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="282" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="280" target="277">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="670" y="1020" as="sourcePoint"/>
+                        <mxPoint x="720" y="970" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="291" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="285" target="30">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="285" value="Calculate the Exclusion Evidence percentile using exclusion dataset" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="1010" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="290" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="288" target="285">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="288" value="Calculate the Exclusion Evidence Percentile" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="691.25" y="1005" width="172.5" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="295" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="292" target="293">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="292" value="Calculate the Modalities Present" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="1230" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="296" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="293" target="34">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="293" value="Calculate the Agreement Score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="1360" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="299" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="111" target="108">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-200" y="1490" as="sourcePoint"/>
+                        <mxPoint x="-150" y="1440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="304" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="300" target="303">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="300" value="Calculate the Evidence score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="787.5" width="140" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="307" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="303" target="306">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="303" value="Calculate the Modalities Present" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="940" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="310" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="306" target="87">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="306" value="Calculate the Agreement Score" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="1070" width="140" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Machine Learning Flow" id="ILMzq-1bDF4yMV2C5pwp">
+        <mxGraphModel dx="1552" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="100" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-2" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="90" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-3" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-1" target="J-GBsY7jscQIJVETWpnF-2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="280" as="sourcePoint"/>
+                        <mxPoint x="430" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-4" value="1_4_hpa_rna_celline&lt;div&gt;2_DepMap_OmicsExpressionAllGenesTPMLogp1Profile&lt;/div&gt;&lt;div&gt;4_Harmonized_MS_CCLE_Gygi_subsetted&lt;/div&gt;&lt;div&gt;5_OmicsFusionFilteredSupplementary&lt;/div&gt;&lt;div&gt;6_OmicsSomaticMutationsProfile&lt;/div&gt;&lt;div&gt;9_DepMap_sample_info&lt;/div&gt;&lt;div&gt;8_DepMap_OmicsProfiles&lt;/div&gt;&lt;div&gt;11_hpa_rna_celline_description&lt;/div&gt;&lt;div&gt;12_CCLE_metabolomics_20190502&lt;/div&gt;&lt;div&gt;14_OmicsGlobalSignatures&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="620" y="110" width="320" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-5" value="Get the Raw dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-6" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-4" target="J-GBsY7jscQIJVETWpnF-5" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="550" y="260" as="sourcePoint"/>
+                        <mxPoint x="600" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-2" target="J-GBsY7jscQIJVETWpnF-5" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="550" y="260" as="sourcePoint"/>
+                        <mxPoint x="600" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-8" value="Clean all the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="530" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-5" target="J-GBsY7jscQIJVETWpnF-8" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="550" y="460" as="sourcePoint"/>
+                        <mxPoint x="600" y="410" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-10" value="Convert all the profile id columns into ACH id using the&amp;nbsp;8_DepMap_OmicsProfiles&lt;br&gt;Columns which have two data merged together separate it like the gene 1, gene 2 in the fusion dataset&lt;br&gt;Remove the unamed column&lt;br&gt;Pivot the column of&amp;nbsp;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;1_4_hpa_rna_celline on gene name&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;log transform all the RNA values&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="450" width="220" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-11" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-10" target="J-GBsY7jscQIJVETWpnF-8" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="760" y="660" as="sourcePoint"/>
+                        <mxPoint x="810" y="610" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-17" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-12" target="J-GBsY7jscQIJVETWpnF-16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-12" value="Save all the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-8" target="J-GBsY7jscQIJVETWpnF-12" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="460" y="660" as="sourcePoint"/>
+                        <mxPoint x="510" y="610" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-14" value="Create a sub folder called cleaned and save" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-16" value="Apply min max scaler on dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="900" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-19" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-18" target="J-GBsY7jscQIJVETWpnF-16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-18" value="1_4_hpa_rna_celline&lt;div&gt;2_DepMap_OmicsExpressionAllGenes&lt;/div&gt;&lt;div&gt;TPMLogp1Profile&lt;/div&gt;&lt;div&gt;4_Harmonized_MS_CCLE_Gygi_subsetted&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="810" width="240" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-26" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-20" target="J-GBsY7jscQIJVETWpnF-25" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-20" value="Save all the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="1090" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-21" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-16" target="J-GBsY7jscQIJVETWpnF-20" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="520" y="1010" as="sourcePoint"/>
+                        <mxPoint x="570" y="960" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-22" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-20" target="J-GBsY7jscQIJVETWpnF-24" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="520" y="1010" as="sourcePoint"/>
+                        <mxPoint x="560" y="1120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-23" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-12" target="J-GBsY7jscQIJVETWpnF-14" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="520" y="710" as="sourcePoint"/>
+                        <mxPoint x="570" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-24" value="Create a sub folder called scoring" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="1090" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-28" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-25" target="J-GBsY7jscQIJVETWpnF-27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-25" value="Merge these dataset with ACH ID left join on the deemap data" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="1210" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-30" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-27" target="J-GBsY7jscQIJVETWpnF-29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-27" value="Save all the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="1460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-29" value="Create a sub folder called mutation and fusion" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="1460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-32" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-31" target="J-GBsY7jscQIJVETWpnF-25" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-31" value="&lt;br&gt;&lt;div&gt;2_DepMap_OmicsExpressionAllGenes&lt;/div&gt;&lt;div&gt;TPMLogp1Profile&lt;/div&gt;&lt;div&gt;5_OmicsFusionFilteredSupplementary&lt;/div&gt;&lt;div&gt;6_OmicsSomaticMutationsProfile&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="1190" width="220" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-38" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-33" target="J-GBsY7jscQIJVETWpnF-37" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-33" value="Filter out for the genes from protein producing" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="610" width="220" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-34" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-8" target="J-GBsY7jscQIJVETWpnF-33" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="350" y="650" as="sourcePoint"/>
+                        <mxPoint x="400" y="600" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="40" y="560"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-36" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-35" target="J-GBsY7jscQIJVETWpnF-33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-35" value="Deemap Dataset&lt;br&gt;Bio Mart" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="1" vertex="1">
+                    <mxGeometry x="-290" y="620" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-37" value="Keep Deep Map as the base and left join these dataset to form Transcriptomic, Proteonomic and metabolomic layers" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-65" y="840" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-40" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-39" target="J-GBsY7jscQIJVETWpnF-37" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-39" value="&lt;br&gt;&lt;div&gt;2_DepMap_OmicsExpressionAllGenesTPMLogp1Profile&lt;/div&gt;&lt;div&gt;4_Harmonized_MS_CCLE_Gygi_subsetted&lt;/div&gt;&lt;div&gt;12_CCLE_metabolomics_20190502&lt;/div&gt;&lt;div&gt;14_OmicsGlobalSignatures&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="-460" y="730" width="310" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-44" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-41" target="J-GBsY7jscQIJVETWpnF-43" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-41" value="Create a MOFA fit and transform the data" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-65" y="1170" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-47" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-43" target="J-GBsY7jscQIJVETWpnF-45" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-43" value="Merge the MOFA with the ACH ID from the deepmap" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="1320" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-51" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-45" target="J-GBsY7jscQIJVETWpnF-50" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-45" value="Save the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="1480" width="210" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-46" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-45" target="J-GBsY7jscQIJVETWpnF-49" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-90" y="1390" as="sourcePoint"/>
+                        <mxPoint x="-190" y="1520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-49" value="Save the dataset in Artifact" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="1490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-53" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-50" target="J-GBsY7jscQIJVETWpnF-52" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-50" value="Calculate the Cosine Similarity" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="1650" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-55" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-52" target="J-GBsY7jscQIJVETWpnF-54" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-52" value="Merge it with the Deepmap for the ID" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="1780" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-57" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-54" target="J-GBsY7jscQIJVETWpnF-56" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-54" value="Calculate the mean value for cell line" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="1930" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-59" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-56" target="J-GBsY7jscQIJVETWpnF-58" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-61" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-56" target="J-GBsY7jscQIJVETWpnF-60" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-56" value="Save the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2070" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-58" value="Cosine dataset in artifact" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-280" y="2075" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-65" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-60" target="J-GBsY7jscQIJVETWpnF-64" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-60" value="Feed the PCA data to machine learning model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2250" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-62" value="KNN, Kmeans and HDBSCAN" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-280" y="2255" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-63" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-62" target="J-GBsY7jscQIJVETWpnF-60" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-90" y="2200" as="sourcePoint"/>
+                        <mxPoint x="-40" y="2150" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-71" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-64" target="J-GBsY7jscQIJVETWpnF-66" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-64" value="Train the model on the dataset" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2410" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-70" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-66" target="J-GBsY7jscQIJVETWpnF-67" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-66" value="Extract the cluster numbers" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2540" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-73" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-67" target="J-GBsY7jscQIJVETWpnF-72" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-67" value="Extract the top 20 cell lines from each cluster and save it to a txt file with the cluster id" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2660" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-68" value="Saved file of cluster data" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="2665" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-69" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-67" target="J-GBsY7jscQIJVETWpnF-68" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-90" y="2660" as="sourcePoint"/>
+                        <mxPoint x="-40" y="2610" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-77" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-72" target="J-GBsY7jscQIJVETWpnF-76" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-72" value="Map the cluster image in 2D" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2800" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-74" value="Save the image to artifact" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="2810" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-75" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-72" target="J-GBsY7jscQIJVETWpnF-74" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-90" y="2780" as="sourcePoint"/>
+                        <mxPoint x="-40" y="2730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-81" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-76" target="J-GBsY7jscQIJVETWpnF-80" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-76" value="Save the model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="2960" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-78" value="Alternative prediction model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-300" y="2970" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-79" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-76" target="J-GBsY7jscQIJVETWpnF-78" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-90" y="2900" as="sourcePoint"/>
+                        <mxPoint x="-40" y="2850" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-83" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-80" target="J-GBsY7jscQIJVETWpnF-82" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-80" value="Test the model" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-55" y="3100" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-82" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="-5" y="3270" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-86" value="" style="edgeStyle=none;html=1;" parent="1" source="J-GBsY7jscQIJVETWpnF-84" target="J-GBsY7jscQIJVETWpnF-41" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-84" value="Saved the combined raw datasetmodel" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-65" y="1030" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="J-GBsY7jscQIJVETWpnF-85" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="J-GBsY7jscQIJVETWpnF-37" target="J-GBsY7jscQIJVETWpnF-84" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="110" y="1130" as="sourcePoint"/>
+                        <mxPoint x="160" y="1080" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
