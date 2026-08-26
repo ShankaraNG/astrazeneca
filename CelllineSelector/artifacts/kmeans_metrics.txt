@@ -1,0 +1,4 @@
+KMeans Clustering Metrics (K=31)
+----------------------------------------
+Inertia: 66010.5565
+Silhouette Score: 0.1655

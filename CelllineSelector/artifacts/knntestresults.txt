@@ -1,0 +1,5 @@
+KNN Test Results (6 True Alternative Models)
+--------------------------------------------------
+Target: ACH-000005 -> Avg Alt Distance: 7.3585 | Alternatives: [ACH-000074, ACH-000387, ACH-000004, ACH-000076, ACH-000602]
+Target: ACH-000008 -> Avg Alt Distance: 3.9746 | Alternatives: [ACH-000805, ACH-000676, ACH-000425, ACH-000882, ACH-000322]
+Target: ACH-000015 -> Avg Alt Distance: 5.4494 | Alternatives: [ACH-000657, ACH-000538, ACH-000853, ACH-000201, ACH-000607]

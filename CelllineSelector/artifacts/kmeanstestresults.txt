@@ -1,0 +1,4 @@
+KMeans test results
+ModelID: ACH-000005 -> Cluster: 5
+ModelID: ACH-000008 -> Cluster: 28
+ModelID: ACH-000015 -> Cluster: 1
