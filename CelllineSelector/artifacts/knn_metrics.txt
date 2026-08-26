@@ -1,0 +1,3 @@
+KNN Model Metrics (K=6)
+----------------------------------------
+Overall Average Distance: 4.7249
