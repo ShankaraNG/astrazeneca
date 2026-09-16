@@ -818,8 +818,6 @@ with tab_search:
          
             st.info("No explanation was returned for this query.")
 
-
-═
 if tab_mut_ref is not None:
     with tab_mut_ref:
         st.markdown('<div class="card-title">Mutation Reference</div>',
