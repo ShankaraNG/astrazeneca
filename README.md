@@ -2,6 +2,11 @@
 
 A transparent multi-omics framework for cancer cell line recommendation. Given one or more target genes, CellLineSelector ranks 1,479 DepMap cancer cell lines by suitability for studying those genes, combining gene-expression evidence, multi-omics similarity, and data confidence into a single auditable score, with optional exclusion genes, disease filtering, and mutation/fusion flagging. A locally hosted LLM generates a natural-language rationale for each recommendation.
 
+## Live End Point
+
+The application has been deployed on the AWS services on the below URL
+http://celllineselectorlb-450115590.us-east-1.elb.amazonaws.com/
+
 ## Architecture
 
 The system runs in two phases:
